@@ -1,0 +1,16 @@
+<%- include("./partials/header.ejs") %>
+   <div class="form-secrets">
+    <form action="/share" method="post">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Name:</label>
+            <input type="text" class="form-control" required="true" id="Input" name="name" placeholder="Random Name">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label" >Secret:</label>
+            <textarea class="form-control" required="true" id="Textarea" rows="15" cols="15" name="secret" placeholder="Enter your secret" maxlength="250" resize="none"></textarea> 
+            <input class="btn btn-primary" id="submit-secret" type="submit" value="Submit">
+          </div>
+    </form>
+   </div>
+<%- include("./partials/footer.ejs") %>
+

@@ -1,0 +1,8 @@
+<%- include("./partials/header.ejs") %>
+<form action="/contact" method="POST">      
+    <input name="name" type="text" class="feedback-input" placeholder="Name" />   
+    <input name="email" type="text" class="feedback-input" placeholder="Email" />
+    <textarea name="text" id="message-input" class="feedback-input" placeholder="Type your Message" maxlength="250"></textarea>
+    <a href="mailto:subhadey2388@gmail.com"><input type="submit" value="SUBMIT"/></a>
+  </form>
+<%- include("./partials/footer.ejs") %>
