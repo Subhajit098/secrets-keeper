@@ -1,11 +1,12 @@
 "use strict"
 
-const express=require("express");
-const bp=require("body-parser");
+const express = require("express");
+const bp = require("body-parser");
 const ejs=require("ejs");
 const mongoose=require("mongoose");
 const flash=require("connect-flash");
 const app= express();
+const connectionToDB=require("./db/dbConnection.js")
 
 
 app.use(bp.urlencoded({extended:true}));
@@ -17,15 +18,7 @@ app.set("view engine","ejs");
 app.use(flash());
 
 // connecting to mongodb via mongoose
-mongoose.connect("mongodb://localhost:27017/secretsDB",{useUnifiedTopology:true})
-.then(()=>
-{
-    console.log("Connected to the database");
-})
-.catch((err)=>
-{
-    console.log(err);
-})
+connectionToDB();
 
 // defining a contact schema for the contact form
 const contactSchema=new mongoose.Schema({
