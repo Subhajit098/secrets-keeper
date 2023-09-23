@@ -1,0 +1,3 @@
+const share=(req,res)=>{
+    
+}

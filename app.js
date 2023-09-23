@@ -7,6 +7,8 @@ const mongoose=require("mongoose");
 const flash=require("connect-flash");
 const app= express();
 const connectionToDB=require("./db/dbConnection.js")
+const User=require("./models/contact.js")
+const Secret=require("./models/secret.js")
 
 
 app.use(bp.urlencoded({extended:true}));
@@ -21,43 +23,20 @@ app.use(flash());
 connectionToDB();
 
 // defining a contact schema for the contact form
-const contactSchema=new mongoose.Schema({
-    name:{
-        type:String,
-        required:true
-    },
-    email:{
-        type:String,
-        requried:true
-    },
-    message:{
-        type:String
-    }
-});
+
 
 // defining a secretSchema:
-const secretSchema=new mongoose.Schema({
-    name:
-    {
-        type:String,
-        requried:true
-    },
-    secret:
-    {
-        type:String,
-        required:true
-    }
-});
+
 
 // an SecretModel:
-const Secret=mongoose.model("Secret",secretSchema);
+// const Secret=mongoose.model("Secret",secretSchema);
 
 let all_secrets=[{name:"anonymous",
-secret:"I have many gfs"}
+secret:"I am Binod"}
 ];
 
 // an User model
-const User=mongoose.model("User",contactSchema);
+// const User=mongoose.model("User",contactSchema);
 
 let title="";
 
